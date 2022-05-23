@@ -23,6 +23,4 @@ class Product {
     @SerializedName("delivery")
     var delivery:String? = null
 
-
-
 }
