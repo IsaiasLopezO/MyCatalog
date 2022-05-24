@@ -52,8 +52,15 @@ class adaptador(context: Context, products:List<Product>, onItemListener:OnItemL
 
             tvTitle.text = item.name
             tvProveedor.text = item.provider
-            tvPrecio.text = item.price
-            tvDeliver.text = item.delivery
+            tvPrecio.text = context.getString(R.string.Signo_pesos) + item.price
+
+            if(item.delivery == "0.00"){
+
+                tvDeliver.text = context.getString(R.string.envio_gratis)
+
+            }else{
+                tvDeliver.text = context.getString(R.string.Signo_pesos) + item.delivery
+            }
 
             Glide.with(context)
                 .load(item.thumbnail_url)
